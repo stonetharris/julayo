@@ -63,4 +63,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-
+class Donation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=6, decimal_places=2)
+    message = models.TextField((
+        'message'), max_length=500, blank=True)

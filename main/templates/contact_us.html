@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load tailwind_filters %}
+
+  <div class="py-8 px-4 mx-auto px-5 lg:px-96 lg:py-16 bg-black text-white">
+    <h2 class="mb-4 text-2xl text-center font-bold text-white">Contact Us!</h2>
+  <form class="text-white" method="POST">
+    {% csrf_token %}
+
+    {{ form | crispy }}
+
+    <button
+type="submit"
+
+    class="w-32  border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-green-500 font-medium" 
+
+>Submit</button>
+
+</form>
+
+</div>
+
+</section>
+
+  <script>
+
+    function app() {
+        return {
+            step: 1, 
+            
+        }
+    }
+</script>
+
+{% endblock %}
