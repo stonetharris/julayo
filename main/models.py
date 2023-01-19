@@ -68,3 +68,9 @@ class Donation(models.Model):
     amount = models.DecimalField(max_digits=6, decimal_places=2)
     message = models.TextField((
         'message'), max_length=500, blank=True)
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=200, blank = True)
+    email = models.EmailField()
+    description = models.CharField(max_length=2000, blank = True)

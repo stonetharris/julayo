@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-{% load tailwind_filters %}
 
   <div class="py-8 px-4 mx-auto px-5 lg:px-96 lg:py-16 bg-black text-white">
     <h2 class="mb-4 text-2xl text-center font-bold text-white">Contact Us!</h2>
   <form class="text-white" method="POST">
     {% csrf_token %}
 
-    {{ form | crispy }}
+    {{ form.as_p }}
 
     <button
 type="submit"
@@ -22,16 +23,5 @@ type="submit"
 
 </div>
 
-</section>
-
-  <script>
-
-    function app() {
-        return {
-            step: 1, 
-            
-        }
-    }
-</script>
 
 {% endblock %}
