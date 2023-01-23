@@ -66,3 +66,16 @@ def contact_us(request):
     
     # def form_invalid(self, form):
     #     return super().form_invalid(form)
+
+def current_projects(request):
+    context = {}
+    # context['success'] = request.GET.get('success')
+    # context['checkout'] = request.GET.get('checkout')
+    return render(request, 'current_projects.html', context)
+
+
+def our_team(request):
+    context = {}
+    # context['success'] = request.GET.get('success')
+    # context['checkout'] = request.GET.get('checkout')
+    return render(request, 'our_team.html', context)
