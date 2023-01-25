@@ -79,3 +79,10 @@ def our_team(request):
     # context['success'] = request.GET.get('success')
     # context['checkout'] = request.GET.get('checkout')
     return render(request, 'our_team.html', context)
+
+
+def our_story(request):
+    context = {}
+    # context['success'] = request.GET.get('success')
+    # context['checkout'] = request.GET.get('checkout')
+    return render(request, 'our_story.html', context)
