@@ -10,14 +10,14 @@
     <link href = "{% static 'css/styles.css' %}" rel = "stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class = "max-w-8xl mx-auto">
-        {% include 'navbar.html' %}
-        {% block content %}
-
-        {% endblock content %}
+<body class="min-h-screen antialiased leading-none">
+    <div class="h-full">
+        <div class = "max-w-8xl mx-auto">
+            {% include 'navbar.html' %}
+            {% block content %}
+    
+            {% endblock content %}
+        </div>
     </div>
-
 </body>
 </html>
-

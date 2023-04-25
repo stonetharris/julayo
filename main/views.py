@@ -17,14 +17,44 @@ from django.contrib.auth.views import LoginView
 from django.http import HttpResponse, HttpResponseRedirect
 # from rest_framework.viewsets import ModelViewSet
 from django.core.mail import send_mail
-# import stripe
 from django.template.loader import render_to_string
 from django.db.models import Q
 from django.views.generic.edit import CreateView
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
+
+import stripe
+from django.conf import settings
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+def maps(request):
+    context = {'google_maps_api_key': settings.GOOGLE_MAPS_API_KEY}
+    return render(request, 'current_projects.html', context)
 
 
-# Create your views here.
+def donate(request):
+    if request.method == 'POST':
+        token = request.POST.get('stripeToken')
+        amount = 500  # You can set the desired donation amount
 
+        try:
+            charge = stripe.Charge.create(
+                amount=amount,
+                currency='usd',
+                description='Donation',
+                source=token,
+            )
+            # Save the donation information to the database, send a confirmation email, etc.
+            return redirect('donation_success')
+        except stripe.error.CardError as e:
+            # Handle card errors
+            messages.error(request, "Your card has been declined.")
+    else:
+        context = {
+            'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
+        }
+        return render(request, 'donate.html', context)
 
 
 # Create
