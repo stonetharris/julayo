@@ -22,15 +22,12 @@ from django.db.models import Q
 from django.views.generic.edit import CreateView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
+import os
 
 import stripe
 from django.conf import settings
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
-
-def maps(request):
-    context = {'google_maps_api_key': settings.GOOGLE_MAPS_API_KEY}
-    return render(request, 'current_projects.html', context)
 
 
 def donate(request):
@@ -172,11 +169,10 @@ class ContactUsView(FormView):
     #     return super().form_invalid(form)
 
 def current_projects(request):
-    context = {}
-    # context['success'] = request.GET.get('success')
-    # context['checkout'] = request.GET.get('checkout')
+    context = {
+        'google_maps_api_key': os.environ.get('GOOGLE_MAPS_API_KEY', settings.GOOGLE_MAPS_API_KEY),
+    }
     return render(request, 'current_projects.html', context)
-
 
 def our_team(request):
     context = {}

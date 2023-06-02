@@ -9,15 +9,39 @@
     <title>Julayo</title>
     <link href = "{% static 'css/styles.css' %}" rel = "stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://i.imgur.com/UGYfoLe.png" />
 </head>
-<body class="min-h-screen antialiased leading-none">
-    <div class="h-full">
-        <div class = "max-w-8xl mx-auto">
-            {% include 'navbar.html' %}
-            {% block content %}
-    
-            {% endblock content %}
-        </div>
+<body class="min-h-screen antialiased leading-none py-4 bg-green-200">
+    <div class = "container mx-auto px-6">
+        {% include 'navbar.html' %}
+        {% block content %}
+
+        {% endblock content %}
     </div>
 </body>
 </html>
+
+{% block footer %}
+<footer class="bg-green-300 py-4">
+    <div class="logo flex justify-center">
+        <img src="https://i.imgur.com/UGYfoLe.png" alt="Logo" style="width: 150px; height: auto;">
+      </div>
+    <div class="container mx-auto px-6">
+        <div class="flex justify-between items-center">
+            <div class="text-center md:text-left text-gray-600">
+                <p class="text-sm sm:text-md">© 2023 Julayo. All Rights Reserved.</p>
+            </div>
+            
+            <div class="flex space-x-4">
+                <!-- social media links, replace '#' with links -->
+                <!-- <a href="#" class="text-gray-600"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-600"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-600"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-600"><i class="fab fa-linkedin"></i></a> -->
+            </div>
+        </div>
+    </div>
+    
+</footer>
+{% endblock %}
