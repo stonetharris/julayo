@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-a8f6u!*nzqu!+d8u7bvg-!v+gd)d%ldy%945t+0f9#)xdb_qvx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['julayo.org', '127.0.0.1']
+ALLOWED_HOSTS = ['www.julayo.org, julayo.org', '127.0.0.1']
 
 
 # Application definition
