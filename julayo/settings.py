@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'julayo.middleware.SecureMiddleware',
 ]
 
 ROOT_URLCONF = 'julayo.urls'
@@ -156,3 +157,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
+
+SECURE_SSL_REDIRECT = False
