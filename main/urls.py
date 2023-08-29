@@ -19,7 +19,8 @@ urlpatterns = [
     path('donations/delete/<int:donation_id>/', views.delete_donation, name='delete_donation'),
     path('contact-us/', ContactUsView.as_view(), name='contact_us'),
     path('donate/', views.donate, name='donate'),
-
+    path('donation_success/', views.donation_success, name='donation_success'),
+    path('gala_event/', views.gala_event, name='gala_event'),
 ]
 
 

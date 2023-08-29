@@ -4,12 +4,12 @@
 
 {% block content %}
 
-  <div class="py-8 px-4 mx-auto px-5 lg:px-96 lg:py-16 bg-green-200 text-gray-900">
+  <div class="py-8 px-4 mx-auto px-5 lg:px-96 lg:py-16 bg-green-100 text-gray-900">
 
     <a href="{% url 'index' %}" class="flex-grow text-gray-900 border-b-0 border-black py-2 text-m px-1 ">
         Back to Home Page
     </a>
-    <h2 class="mb-4 text-2xl text-center font-bold text-gray-900">Contact Us!</h2>
+    <h2 class="mb-4 text-4xl text-center mt-2 font-bold text-gray-900">Contact Us!</h2>
 
     <form class="text-white" method="POST">
         {% csrf_token %}

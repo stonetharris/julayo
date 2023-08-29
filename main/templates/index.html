@@ -63,10 +63,15 @@
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none sm:text-3xl md:text-5xl lg:text-6xl dark:text-white">Julayo: Everyone deserves equitable healthcare</h1>
           <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Our mission is to build healthcare facilities in underserved areas, providing essential services and employment opportunities.</p>
+          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Check us out on PayBee
+            <a href="https://paybee.io/quickpay.html?handle=julayo#campaignList" class="text-blue-500 underline">
+              here
+            </a>
+          </p>   
           <a href="{% url 'contact_us'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Get in contact with us!
         </a>
-          <a href="https://thegivingexchange.networkforgood.com/projects/182704-julayo" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+          <a href="{% url 'donate'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
             Fund our current project!
         </a> 
       </div>
@@ -91,8 +96,6 @@
     </div>
 </div>
 
-
-
 <section class="bg-green-100 dark:bg-gray-900">
   <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
       <figure class="max-w-screen-md mx-auto">
@@ -112,6 +115,5 @@
       </figure>
   </div>
 </section>
-    
 
 {% endblock content %}

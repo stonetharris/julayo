@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <link rel="icon" href="%svelte.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.css"  rel="stylesheet" />
+  </head>
+  <body>
+    <div id="svelte"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+  </body>
+</html>
+
+<section class="text-gray-600 body-font bg-green-100">
+  <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Join us for our Inaugural Gala:</h1>
+      <!-- ---------------- -->
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+            <img class="w-full h-auto p-10 object-contain rounded-md" src="https://d3e83vdvp96zm2.cloudfront.net/images/project/120/04_img_pleasanthillcenter.jpg" alt="mockup">
+        </div>  
+        <div class="place-self-center lg:col-span-7">
+            </h1>
+            <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-xl lg:text-2xl dark:text-gray-400">
+                <li>○ We will be hosting our first fundraising Gala on 11/5!</li>
+                <li>○ There will be Nigerian food and an African dance performance.</li>
+                <li>
+                  ○ Donated beer from the local <a href="https://morganterritorybrewing.com/" class="underline text-blue-500">Morgan Territory Brewing</a>
+                </li>
+                <li style="clear: both;">
+                  ○ Donated wine from the local winery <a href="https://www.gunbun.com/" class="underline text-blue-500">Gundlauch Bundschu</a>
+                </li>
+                <li style="clear: both;">○ Free childcare included</li>
+                <li>○ Children 9 y.o. and under are free and 8-16 y.o. are $15.</li>
+                <li>○ The children’s entertainment area will include trained childcare professionals, games, toys, pizza, and snacks.</li>
+                <li>○ There will also be an auction of local goods and an opportunity to learn more about the incredible work Julayo is dedicated to.</li>
+            </ul>
+            <p class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                </p>
+      </div>
+    </div>
+    <!-- ---------------- -->
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
+        <div class="place-self-center lg:col-span-7">
+            </h1>
+            <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-xl lg:text-2xl dark:text-gray-400">
+                <p>
+                    ○ Check us out on PayBee
+                    <a href="https://paybee.io/quickpay.html?handle=julayo#campaignList" class="text-blue-500 underline">
+                      here
+                    </a>
+                  </p>                  
+                <p><strong>○ Location:</strong></p>
+                <p class="pl-4">
+                  Pleasant Hill Community Center 320 Civic Dr. Pleasant Hill, CA 94523
+                </p>
+                <p style="clear: both;"><strong>○ Time/Date:</strong></p>
+                <p class="pl-4">November 5th, 2023 from 4:30pm-7:00pm</p>
+            </ul>
+            <p class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                </p>
+      </div>
+      <div class="lg:col-span-5 flex flex-row items-center justify-center space-x-4">
+        <img src="https://d2pxm94gkd1wuq.cloudfront.net/BreweryLogos/Standard/585575706.classic.tracy.blk.wht.jpg" alt="Morgan Territory Brewing" class="w-64">
+        <img src="https://www.gunbun.com/wp-content/uploads/2022/01/GB-Product-Logo.png" alt="Gundlauch Bundschu" class="w-64">
+      </div>      
+    </div> 
+  </div>
+</section>
+
+{% endblock content %}

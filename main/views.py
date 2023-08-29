@@ -29,12 +29,10 @@ from django.conf import settings
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
 def donate(request):
     if request.method == 'POST':
         token = request.POST.get('stripeToken')
-        amount = 500  # You can set the desired donation amount
-
+        amount = int(float(request.POST.get('amount', 0)) * 100)  # convert dollars to cents for Stripe
         try:
             charge = stripe.Charge.create(
                 amount=amount,
@@ -43,16 +41,37 @@ def donate(request):
                 source=token,
             )
             # Save the donation information to the database, send a confirmation email, etc.
+            messages.success(request, "Your donation was successful!")
             return redirect('donation_success')
-        except stripe.error.CardError as e:
-            # Handle card errors
-            messages.error(request, "Your card has been declined.")
-    else:
-        context = {
-            'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
-        }
-        return render(request, 'donate.html', context)
 
+        except stripe.error.CardError as e:
+            messages.error(request, "Your card has been declined.")
+        except stripe.error.RateLimitError as e:
+            # Too many requests made to the API too quickly
+            messages.error(request, "Rate limit exceeded. Please try again later.")
+        except stripe.error.InvalidRequestError as e:
+            # Invalid parameters were supplied to Stripe's API
+            messages.error(request, "Invalid parameters. Please contact support.")
+        except stripe.error.AuthenticationError as e:
+            # Authentication with Stripe's API failed
+            messages.error(request, "Authentication failed. Please contact support.")
+        except stripe.error.APIConnectionError as e:
+            # Network communication with Stripe failed
+            messages.error(request, "Network error. Please try again.")
+        except stripe.error.StripeError as e:
+            # Display a very generic error to the user, and maybe send yourself an email
+            messages.error(request, "An error occurred. Please try again or contact support.")
+        except Exception as e:
+            # Something else happened, completely unrelated to Stripe
+            messages.error(request, "An internal error occurred. Please try again later.")
+    
+    context = {
+        'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
+    }
+    return render(request, 'donate.html', context)
+
+def donation_success(request):
+    return render(request, 'donation_success.html')
 
 # Create
 def create_donation(request):
@@ -95,8 +114,6 @@ def delete_donation(request, donation_id):
 
 def index(request):
     context = {}
-    # context['success'] = request.GET.get('success')
-    # context['checkout'] = request.GET.get('checkout')
     return render(request, 'index.html', context)
 
 class ContactUsView(FormView):
@@ -114,15 +131,15 @@ class ContactUsView(FormView):
         send_mail(
             'A new message from ' + str(instance.name) + 'has been submitted',
             render_to_string('email.txt', context),
-            'insertFromEmailHere@gmail.com',
-            ['insertJuliaEmailHere@gmail.com'],
+            'julayomedical@gmail.com',
+            ['julayomedical@gmail.com'],
             fail_silently=False,
         )
 
         send_mail(
             'Thank you for contacting us!',
             render_to_string('email.txt', context),
-            'insertJuliaEmailHere@gmail.com',
+            'julayomedical@gmail.com',
             [str(instance.email)],
             fail_silently=False,
         )
@@ -132,42 +149,6 @@ class ContactUsView(FormView):
     def get_success_url(self):
         return reverse('contact_us_success')  # or any other URL name where you want to redirect after successful form submission
 
-# old contact_us():
-# def contact_us(request):
-#     form_class = ContactUsForm
-#     template_name = 'contact_us.html'
-#     context = {}
-
-#     def form_valid(self, form):
-#         instance = form.save()
-#         context = {}
-#         context['name'] = instance.name
-#         context['email'] = instance.email
-#         context['description'] = instance.description
-
-
-#         send_mail(
-#             'A new message from ' + str(instance.name) + 'has been submitted',
-#             render_to_string('email.txt', context),
-#             'insertFromEmailHere@gmail.com',
-#             ['insertJuliaEmailHere@gmail.com'],
-#             fail_silently=False,
-#         )
-
-#         send_mail(
-#             'Quote Request Confirmation - 357 Company',
-#             render_to_string('email.txt', context),
-#             'insertJuliaEmailHere@gmail.com',
-#             [str(instance.email)],
-#             fail_silently=False,
-#         )
-#         return super(contact_us, self).form_valid(form)
-#     return render(request, template_name, context)
-    
-    
-    # def form_invalid(self, form):
-    #     return super().form_invalid(form)
-
 def current_projects(request):
     context = {
         'google_maps_api_key': os.environ.get('GOOGLE_MAPS_API_KEY', settings.GOOGLE_MAPS_API_KEY),
@@ -176,13 +157,12 @@ def current_projects(request):
 
 def our_team(request):
     context = {}
-    # context['success'] = request.GET.get('success')
-    # context['checkout'] = request.GET.get('checkout')
     return render(request, 'our_team.html', context)
-
 
 def our_story(request):
     context = {}
-    # context['success'] = request.GET.get('success')
-    # context['checkout'] = request.GET.get('checkout')
     return render(request, 'our_story.html', context)
+
+def gala_event(request):
+    context = {}
+    return render(request, 'gala_event.html', context)

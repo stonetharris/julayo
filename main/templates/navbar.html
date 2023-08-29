@@ -11,7 +11,8 @@
           <a href="{% url 'our_story'%}" class="mr-5 hover:text-blue-500">Our Story</a>
           <a href="{% url 'our_team'%}" class="mr-5 hover:text-blue-500">Our Team</a>
           <a href="{% url 'contact_us'%}" class="mr-5 hover:text-blue-500">Contact Us</a>
-          <a href="https://thegivingexchange.networkforgood.com/projects/182704-julayo" class="mr-5 hover:text-blue-500">Donate</a>
+          <a href="{% url 'donate'%}" class="mr-5 hover:text-blue-500">Donate</a>
+          <a href="{% url 'gala_event'%}" class="mr-5 hover:text-blue-500">Gala Event</a>
       </nav>
       {% if request.user.is_authenticated %}
         Logged in as: {{ request.user.username }}

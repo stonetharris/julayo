@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="py-8 px-4 md:px-5 lg:px-72 lg:py-16 bg-green-200 text-gray-900">
+    <a href="{% url 'index' %}" class="flex-grow text-gray-900 border-b-2 border-black py-2 text-lg px-1">
+        Back to Home Page
+    </a>
+    <h2 class="mb-4 text-2xl text-center font-bold text-gray-900 mt-10">Thank you for your donation!</h2>
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="my-4 bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Your generosity is appreciated</h3>
+            <p class="mb-2">
+                Your donation will help us build and maintain the hospital in Akure, providing essential healthcare services to those in need.
+            </p>
+            <p>
+                We're dedicated to ensuring that every dollar goes directly to the cause. Thanks for making a difference!
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
