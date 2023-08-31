@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <!DOCTYPE html>
@@ -19,7 +18,8 @@
 
 <section class="text-gray-600 body-font bg-green-100">
   <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Join us for our Inaugural Gala:</h1>
+    <h1 class="text-center mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Join us for our Inaugural Gala:</h1>
+
       <!-- ---------------- -->
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
         <div class="lg:col-span-5">
@@ -66,12 +66,11 @@
             <p class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                 </p>
       </div>
-      <div class="lg:col-span-5 flex flex-row items-center justify-center space-x-4">
-        <img src="https://d2pxm94gkd1wuq.cloudfront.net/BreweryLogos/Standard/585575706.classic.tracy.blk.wht.jpg" alt="Morgan Territory Brewing" class="w-64">
-        <img src="https://www.gunbun.com/wp-content/uploads/2022/01/GB-Product-Logo.png" alt="Gundlauch Bundschu" class="w-64">
+      <div class="lg:col-span-5 sm:col-span-2 flex flex-row items-center justify-center space-x-4">
+        <img src="https://morganterritorybrewing.com/wp-content/uploads/2019/03/morgan-logo.png" alt="Morgan Territory Brewing" class="w-48 md:w-64">
+        <img src="https://www.gunbun.com/wp-content/uploads/2022/01/GB-Product-Logo.png" alt="Gundlauch Bundschu" class="w-48 md:w-64">
       </div>      
     </div> 
   </div>
 </section>
-
 {% endblock content %}
