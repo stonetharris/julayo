@@ -24,13 +24,16 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 import os
 import datetime
-
+import logging
 import stripe
 from django.conf import settings
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
+logger = logging.getLogger('django')
+
 def donate(request):
+    logger.debug(settings.STRIPE_PUBLIC_KEY)
     if request.method == 'POST':
         token = request.POST.get('stripeToken')
         amount = int(float(request.POST.get('amount', 0)) * 100)  # convert dollars to cents for Stripe
