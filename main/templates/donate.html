@@ -60,7 +60,9 @@
 </div>
 <script>
     // Replace 'your-publishable-key' with your Stripe publishable key
-    const stripe = Stripe('{{ stripe_public_key }}');
+    const stripePublicKey = '{{ stripe_public_key }}';
+    const stripe = Stripe(stripePublicKey);
+    console.log("key is" + stripePublicKey);
     const elements = stripe.elements();
     const card = elements.create('card');
     card.mount('#card-element');
