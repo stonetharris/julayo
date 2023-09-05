@@ -62,7 +62,8 @@ def donate(request):
             return redirect('donation_success')
 
         except stripe.error.CardError as e:
-            messages.error(request, "Your card has been declined.")
+            error_message = e.user_message if e.user_message else "Your card has been declined."
+            messages.error(request, error_message)
         except stripe.error.RateLimitError as e:
             # Too many requests made to the API too quickly
             messages.error(request, "Rate limit exceeded. Please try again later.")
