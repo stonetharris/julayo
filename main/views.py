@@ -42,6 +42,15 @@ def donate(request):
             )
             # Save the donation information to the database, send a confirmation email, etc.
             messages.success(request, "Your donation was successful!")
+            donor_email = request.POST.get('email')
+            donor_name = request.POST.get('name')
+            send_mail(
+                'Thank you so much for your donation!',
+                f'Dear {donor_name},\n\nThank you for your generous donation to our project in Akure. Your support makes a difference!\n\nBest regards,\nThe Julayo Medical Team',
+                'julayomedical@gmail.com',
+                [donor_email],
+                fail_silently=False,
+            )
             return redirect('donation_success')
 
         except stripe.error.CardError as e:
