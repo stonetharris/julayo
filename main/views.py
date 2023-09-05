@@ -23,6 +23,7 @@ from django.views.generic.edit import CreateView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 import os
+import datetime
 
 import stripe
 from django.conf import settings
@@ -40,13 +41,20 @@ def donate(request):
                 description='Donation',
                 source=token,
             )
+            donation_amount = float(request.POST.get('amount', 0))
             # Save the donation information to the database, send a confirmation email, etc.
             messages.success(request, "Your donation was successful!")
             donor_email = request.POST.get('email')
             donor_name = request.POST.get('name')
             send_mail(
                 'Thank you so much for your donation!',
-                f'Dear {donor_name},\n\nThank you for your generous donation to our project in Akure. Your support makes a difference!\n\nBest regards,\nThe Julayo Medical Team',
+                f'Dear {donor_name},\n\n'
+                f'Thank you for your generous donation of ${donation_amount:.2f} to our project in Akure. Your support makes a difference!\n\n'
+                f'Here is a summary of your donation:\n'
+                f'Amount: ${donation_amount:.2f}\n'
+                f'Date: {datetime.date.today()}\n\n'  # Including the donation date can be useful
+                f'Best regards,\n'
+                f'The Julayo Medical Team',
                 'julayomedical@gmail.com',
                 [donor_email],
                 fail_silently=False,
