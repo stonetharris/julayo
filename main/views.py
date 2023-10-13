@@ -1,6 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.template import base
-# from twilio.rest import Client
 from .forms import *
 from .models import *
 from django.views.generic.list import ListView
@@ -15,7 +14,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponse, HttpResponseRedirect
-# from rest_framework.viewsets import ModelViewSet
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.db.models import Q
@@ -183,3 +181,7 @@ def our_story(request):
 def gala_event(request):
     context = {}
     return render(request, 'gala_event.html', context)
+
+def flyer(request):
+    context = {}
+    return render(request, 'flyer.html', context)

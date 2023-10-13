@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Flyer Display</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.css" />
+</head>
+<body>
+    <section class="text-gray-600 body-font bg-green-100 py-24">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <h1 class="text-center mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Our Event Flyer</h1>
+            
+            <!-- Display the PDF flyer -->
+            <div class="mt-10">
+                <iframe src="{% static 'pdf/flyer1.pdf' %}" width="80%" height="600px" style="border: none;"></iframe>
+            </div>
+            <a href="{% static 'pdf/flyer1.pdf' %}" target="_blank">View Event Flyer</a>
+
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+</body>
+</html>
+
+{% endblock content %}

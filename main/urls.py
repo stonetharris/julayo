@@ -21,6 +21,7 @@ urlpatterns = [
     path('donate/', views.donate, name='donate'),
     path('donation_success/', views.donation_success, name='donation_success'),
     path('gala_event/', views.gala_event, name='gala_event'),
+    path('flyer/', views.flyer, name='flyer'),
 ]
 
 
