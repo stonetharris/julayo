@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-gray-700 body-font bg-green-200">
+  <div class="container px-5 py-24 mx-auto flex flex-col text-center w-full mb-12">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Thank You!</h1>
+    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Your submission has been received. We appreciate your interest and will get back to you soon.</p>
+    <div class="flex justify-center mt-6">
+        <a href="{% url 'index' %}" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">Back to Home</a>
+    </div>
+  </div>
+</section>
+{% endblock content %}

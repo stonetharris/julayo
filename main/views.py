@@ -186,6 +186,9 @@ def flyer(request):
     context = {}
     return render(request, 'flyer.html', context)
 
+def thank_you(request):
+    return render(request, 'thank_you.html')
+
 def volunteer(request):
     if request.method == 'POST':
         form = VolunteerForm(request.POST)
@@ -193,21 +196,20 @@ def volunteer(request):
             # Process the data, send email, etc.
             send_mail(
                 'New Volunteer Submission',
-                # Email message body
                 f"Name: {form.cleaned_data['name']}\n"
                 f"Email: {form.cleaned_data['email']}\n"
                 f"Interest: {form.cleaned_data['interest']}",
-                # From email
                 'stonetharris@gmail.com',
-                # To email
                 ['julia.p.polk@kp.org'],
                 fail_silently=False,
             )
-            return HttpResponse('Thank you for volunteering!')
+            # Render the thank you page instead of returning an HttpResponse
+            return render(request, 'thank_you.html')
     else:
         form = VolunteerForm()
 
     return render(request, 'volunteer.html', {'form': form})
+
 
 def subscribe_newsletter(request):
     if request.method == 'POST':
@@ -222,12 +224,12 @@ def subscribe_newsletter(request):
             send_mail(
                 'Newsletter Subscription',
                 message,
-                'stonetharris@gmail.com',  # The from email
-                ['julia.p.polk@kp.org'],  # The destination email
+                'stonetharris@gmail.com',
+                ['julia.p.polk@kp.org'],
                 fail_silently=False,
             )
-            # Redirect to a new URL after POST
-            return HttpResponseRedirect('/thanks/')  # Change to the URL you want to redirect to after subscribing
+            # Render the thank you page instead of redirecting
+            return render(request, 'thank_you.html')
     else:
         form = NewsletterForm()
 

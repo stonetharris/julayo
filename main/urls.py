@@ -24,6 +24,7 @@ urlpatterns = [
     path('flyer/', views.flyer, name='flyer'),
     path('volunteer/', views.volunteer, name='volunteer'),
     path('subscribe/', views.subscribe_newsletter, name='subscribe'),
+    path('thank-you/', views.thank_you, name='thank_you'),
 ]
 
 
