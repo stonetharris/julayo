@@ -146,15 +146,15 @@ class ContactUsView(FormView):
         send_mail(
             'A new message from ' + str(instance.name) + 'has been submitted',
             render_to_string('email.txt', context),
-            'julayomedical@gmail.com',
-            ['julayomedical@gmail.com'],
+            'stonetharris@gmail.com',
+            ['julia.p.polk@kp.org'],
             fail_silently=False,
         )
 
         send_mail(
             'Thank you for contacting us!',
             render_to_string('email.txt', context),
-            'julayomedical@gmail.com',
+            'stonetharris@gmail.com',
             [str(instance.email)],
             fail_silently=False,
         )
@@ -185,3 +185,50 @@ def gala_event(request):
 def flyer(request):
     context = {}
     return render(request, 'flyer.html', context)
+
+def volunteer(request):
+    if request.method == 'POST':
+        form = VolunteerForm(request.POST)
+        if form.is_valid():
+            # Process the data, send email, etc.
+            send_mail(
+                'New Volunteer Submission',
+                # Email message body
+                f"Name: {form.cleaned_data['name']}\n"
+                f"Email: {form.cleaned_data['email']}\n"
+                f"Interest: {form.cleaned_data['interest']}",
+                # From email
+                'stonetharris@gmail.com',
+                # To email
+                ['julia.p.polk@kp.org'],
+                fail_silently=False,
+            )
+            return HttpResponse('Thank you for volunteering!')
+    else:
+        form = VolunteerForm()
+
+    return render(request, 'volunteer.html', {'form': form})
+
+def subscribe_newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            # Construct the email message
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = f"Newsletter Subscription Request:\n\nName: {name}\nEmail: {email}"
+            
+            # Send email
+            send_mail(
+                'Newsletter Subscription',
+                message,
+                'stonetharris@gmail.com',  # The from email
+                ['julia.p.polk@kp.org'],  # The destination email
+                fail_silently=False,
+            )
+            # Redirect to a new URL after POST
+            return HttpResponseRedirect('/thanks/')  # Change to the URL you want to redirect to after subscribing
+    else:
+        form = NewsletterForm()
+
+    return render(request, 'subscribe.html', {'form': form})

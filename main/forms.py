@@ -15,12 +15,37 @@ class DonationForm(forms.ModelForm):
 
 
 class ContactUsForm(forms.ModelForm):
-    name = forms.CharField(label="Your Name", widget=forms.TextInput(attrs={'class': 'sm:text-xl my-3 rounded-xl text-white text-xs transition ease-in-out w-full bg-gray-700'}))
-    email = forms.EmailField(label="Your Email", max_length=60, widget=forms.TextInput(attrs={'class': 'text-xl my-3 rounded-xl text-white text-sm transition ease-in-out w-full bg-gray-700'}))
-    description = forms.CharField(label="Please leave a message.", required=False, widget=forms.Textarea(attrs={'class': 'text-xl my-3 rounded-xl text-white text-sm transition ease-in-out w-full bg-gray-700'}))
+    name = forms.CharField(label="Your Name", widget=forms.TextInput(attrs={'class': 'sm:text-xl my-3 rounded-xl text-black text-xs transition ease-in-out w-full'}))
+    email = forms.EmailField(label="Your Email", max_length=60, widget=forms.TextInput(attrs={'class': 'text-xl my-3 rounded-xl text-black text-sm transition ease-in-out w-full'}))
+    description = forms.CharField(label="Please leave a message.", required=False, widget=forms.Textarea(attrs={'class': 'text-xl my-3 rounded-xl text-black text-sm transition ease-in-out w-full'}))
     class Meta:
         model = ContactUs
         fields = ['name', 'email', 'description']
+
+class VolunteerForm(forms.Form):
+    name = forms.CharField(label='Your Name', max_length=100, widget=forms.TextInput(attrs={'class': 'sm:text-xl my-3 rounded-xl text-black text-xs transition ease-in-out w-full border'}))
+    email = forms.EmailField(label='Email', widget=forms.TextInput(attrs={'class': 'sm:text-xl my-3 rounded-xl text-black text-xs transition ease-in-out w-full border'}))
+    interest = forms.ChoiceField(
+        choices=[('marketing', 'Marketing'), ('fundraising', 'Fundraising'), ('other', 'Other')],
+        label='Area of Interest'
+    )
+
+class NewsletterForm(forms.Form):
+    name = forms.CharField(
+        label='Your Name', 
+        max_length=100, 
+        widget=forms.TextInput(attrs={
+            'class': 'sm:text-xl my-3 rounded-xl text-black text-xs transition ease-in-out w-full border border-gray-300 focus:border-green-500'
+        })
+    )
+    email = forms.EmailField(
+        label='Your Email', 
+        widget=forms.TextInput(attrs={
+            'class': 'sm:text-xl my-3 rounded-xl text-black text-xs transition ease-in-out w-full border border-gray-300 focus:border-green-500'
+        })
+    )
+
+
 
 
 # class CustomUserCreationForm(UserCreationForm):
