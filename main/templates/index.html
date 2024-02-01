@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,13 +68,16 @@
           </p>   
           <a href="{% url 'contact_us'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Get in contact with us!
-        </a>
-        <a href="https://paybee.io/quickpay.html?handle=julayo#donationConfirm" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
-            Fund our project!
-        </a> 
-        <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
-          Gala Recap
-        </a> 
+          </a>
+          <a href="https://paybee.io/quickpay.html?handle=julayo#donationConfirm" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+              Fund our project!
+          </a> 
+          <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+            Gala Recap
+          </a> 
+          <a href="{% static '/newsletter.pdf'%}" target="_blank" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+            Newsletter
+          </a> 
       </div>
       <div class="lg:mt-0 lg:col-span-5 lg:flex">
         <img class="rounded mt-2" src="https://windows10spotlight.com/wp-content/uploads/2022/09/014704c314b021775de24dc58ba5148f.jpg" alt="mockup">
