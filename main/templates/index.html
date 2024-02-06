@@ -85,19 +85,41 @@
   </div>
 </section>
 
-<div class="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
-    <div class="sm:block max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-        <img class="object-cover object-center rounded" alt="hero" src="https://i.imgur.com/Tk86YGT.jpg">
+<!-- <section >
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-800">Check out this video from the Gala!</h2>
     </div>
-    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-        <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Why fund our project?</h1>
-        <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            <li>
-                Julayo is committed to improving the health of those most in need by developing health care centers in underserved areas that are staffed and run by local people. The goal is to reverse brain drain, improve the local economy and supply much needed health care. 
-                We do this by setting up a primary care clinic and then a medical training center followed by a hospital when the community has enough training and resources to proceed.
-            </li>
-        </ul>
+    <div class="flex justify-center">
+      <div class="w-full max-w-2xl px-4">
+        <div class="relative" style="padding-top: 150%;">
+          <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
+  </div>
+</section> -->
+
+<div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
+  <div class="lg:col-span-5">
+    <div class="relative" style="padding-top: 150%;">
+      <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  
+  <div class="mr-auto place-self-center lg:col-span-7">
+      <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-700 dark:text-white">Check out this video from our recent Gala!</h1>
+      <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+          <li>
+            Our November Gala was successful in raising over $25,000 towards our cause. Go to our Events page for a recap!
+          </li>
+          <!-- <li>
+            <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+              Gala Recap
+            </a> 
+          </li> -->
+      </ul>
+  </div>
 </div>
 
 <section class="bg-green-100 dark:bg-gray-900">
