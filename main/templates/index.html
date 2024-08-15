@@ -75,54 +75,50 @@
           <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Gala Recap
           </a> 
-          <a href="{% static '/newsletter.pdf'%}" target="_blank" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+          <!-- <a href="{% static '/newsletter.pdf'%}" target="_blank" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Newsletter
-          </a> 
+          </a>  -->
       </div>
       <div class="lg:mt-0 lg:col-span-5 lg:flex">
         <img class="rounded mt-2" src="https://windows10spotlight.com/wp-content/uploads/2022/09/014704c314b021775de24dc58ba5148f.jpg" alt="mockup">
       </div>                
   </div>
 </section>
-
-<!-- <section >
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-8">
-      <h2 class="text-3xl font-bold text-gray-800">Check out this video from the Gala!</h2>
-    </div>
-    <div class="flex justify-center">
-      <div class="w-full max-w-2xl px-4">
-        <div class="relative" style="padding-top: 150%;">
-          <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe>
-        </div>
+<section class="">
+  <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+      <div class="lg:mt-0 lg:col-span-5 lg:flex">
+        <img class="rounded mt-2" src="https://i.imgur.com/wonv7bF.png" alt="mockup">
+      </div> 
+      <div class="ml-8 mr-auto place-self-center lg:col-span-7">
+        <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none sm:text-3xl md:text-5xl lg:text-6xl dark:text-white">Save the date!</h1>
+          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Julayo's second annual fundraising gala is November 9th at 430pm at the Pleasant Hill Senior Center 233 Gregory Lane, Pleasant Hill, CA 94523. 
+          </p>
+      </div>            
+  </div>
+</section>
+<section class="bg-green-100 dark:bg-gray-900">
+  <div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <div class="relative" style="padding-top: 150%;">
+        <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-  </div>
-</section> -->
-
-<div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
-  <div class="lg:col-span-5">
-    <div class="relative" style="padding-top: 150%;">
-      <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe>
+    <div class="mr-auto place-self-center lg:col-span-7">
+        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-700 dark:text-white">Check out this video from our 2023 fundraising Gala!</h1>
+        <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <li>
+              Our November Gala was successful in raising over $25,000 towards our cause. Go to our Events page for a recap!
+            </li>
+            <!-- <li>
+              <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+                Gala Recap
+              </a> 
+            </li> -->
+        </ul>
     </div>
   </div>
-  
-  <div class="mr-auto place-self-center lg:col-span-7">
-      <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-700 dark:text-white">Check out this video from our recent Gala!</h1>
-      <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-          <li>
-            Our November Gala was successful in raising over $25,000 towards our cause. Go to our Events page for a recap!
-          </li>
-          <!-- <li>
-            <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
-              Gala Recap
-            </a> 
-          </li> -->
-      </ul>
-  </div>
-</div>
-
-<section class="bg-green-100 dark:bg-gray-900">
+</section>
+<section class="">
   <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
       <figure class="max-w-screen-md mx-auto">
           <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">

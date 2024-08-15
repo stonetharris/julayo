@@ -186,6 +186,10 @@ def flyer(request):
     context = {}
     return render(request, 'flyer.html', context)
 
+def upcoming_events(request):
+    context = {}
+    return render(request, 'upcoming_events.html', context)
+
 def thank_you(request):
     return render(request, 'thank_you.html')
 
