@@ -2,27 +2,40 @@
 
 {% block content %}
 <section class="text-gray-700 body-font bg-green-200">
-  <div class="container px-5 py-24 mx-auto">
+  <div class="container px-5 py-12 mx-auto">
     <div class="flex justify-center">
-      <div class="w-full max-w-lg bg-white rounded-lg p-8 flex flex-col">
-        <h2 class="text-gray-900 text-lg font-medium title-font mb-5 text-center">Volunteer With Us</h2>
-        <p class="mb-4 text-gray-600">We are currently looking for volunteers in the following areas:</p>
+      <div class="w-full max-w-lg bg-green-300 rounded-lg p-8 flex flex-col">
+        <h2 class="text-gray-900 text-xl font-medium title-font mb-5 text-center">Contact Us!</h2>
         <ul class="mb-8 text-gray-600 list-disc list-inside">
-            <li><strong>Marketing:</strong> We are looking for someone to write our newsletters, maintain and contribute to our social media. Research different organizations and individuals to reach out to and do the outreach.</li>
-            <li><strong>Fundraising:</strong> We are looking for someone to help design and implement fundraising campaigns. From auctions to outdoor runs, anything is possible if we can have the help to put it together.</li>
+          <li><strong>Newsletter:</strong> Let us know if you are interested in receiving our monthly newsletters.</li>
+          <br>
+          <li><strong>Volunteering:</strong> If you are interested in volunteering, let us know what you specialize in and how you would like to help.</li>
         </ul>
         <form method="post" class="w-full">
           {% csrf_token %}
           <div class="mb-4">
-            {{ form.name.label_tag }} {{ form.name }}
+            {{ form.name.label_tag }} 
+            {{ form.name }}
           </div>
           <div class="mb-4">
-            {{ form.email.label_tag }} {{ form.email }}
+            <div class="flex items-center">
+              {{ form.email.label_tag }} 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2 inline-flex">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            {{ form.email }}
           </div>
+          
+          
           <div class="mb-4">
-            {{ form.interest.label_tag }} {{ form.interest }}
+            {{ form.description.label_tag }} {{ form.description }}
           </div>
-          <button type="submit" class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Submit</button>
+          <div class="flex justify-center"> <!-- Add this wrapper div -->
+            <button type="submit" class="text-black bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-300 rounded text-lg">
+              Submit
+            </button>
+          </div>
         </form>
         <p class="text-xs text-gray-500 mt-3 text-center">Your personal information will be kept confidential and will only be used to contact you regarding volunteer opportunities.</p>
       </div>

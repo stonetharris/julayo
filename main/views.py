@@ -202,7 +202,7 @@ def volunteer(request):
                 'New Volunteer Submission',
                 f"Name: {form.cleaned_data['name']}\n"
                 f"Email: {form.cleaned_data['email']}\n"
-                f"Interest: {form.cleaned_data['interest']}",
+                f"Description: {form.cleaned_data['description']}",
                 'stonetharris@gmail.com',
                 ['julia.p.polk@kp.org'],
                 fail_silently=False,

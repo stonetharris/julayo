@@ -62,19 +62,19 @@
 <section class="bg-green-100 dark:bg-gray-900">
   <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7">
-        <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none sm:text-3xl md:text-5xl lg:text-6xl dark:text-white">Julayo: Everyone deserves equitable healthcare</h1>
-          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Our mission is to build healthcare facilities in underserved areas, providing essential services and employment opportunities.</p>
-          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Our first annual fundraising gala was a great success. We raised >$25,000! Thank you to our donors and sponsors. We hope this will be the first of many successful fundraisers.
+        <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none sm:text-xl md:text-3xl lg:text-4xl dark:text-white">Julayo: Everyone deserves equitable healthcare</h1>
+          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-lg dark:text-gray-400">Our mission is to build healthcare facilities in underserved areas, providing essential services and employment opportunities.</p>
+          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-lg dark:text-gray-400">Our first annual fundraising gala was a great success. We raised >$25,000! Thank you to our donors and sponsors. We hope this will be the first of many successful fundraisers.
           </p>   
-          <a href="{% url 'contact_us'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+          <a href="{% url 'volunteer'%}" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Get in contact with us!
           </a>
-          <a href="https://paybee.io/quickpay.html?handle=julayo#donationConfirm" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+          <a href="https://paybee.io/quickpay.html?handle=julayo#donationConfirm" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
               Fund our project!
           </a> 
-          <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
+          <!-- <a href="{% url 'gala_event'%}" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Gala Recap
-          </a> 
+          </a>  -->
           <!-- <a href="{% static '/newsletter.pdf'%}" target="_blank" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2 mb-2">
             Newsletter
           </a>  -->
@@ -90,7 +90,7 @@
         <img class="rounded mt-2" src="https://i.imgur.com/roACybq.jpeg" alt="mockup">
       </div> 
       <div class="ml-8 mr-auto place-self-center lg:col-span-7">
-        <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none sm:text-3xl md:text-5xl lg:text-6xl dark:text-white">Save the date!</h1>
+        <h1 class="text-gray-700 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none sm:text-xl md:text-3xl lg:text-4xl dark:text-white">Save the date!</h1>
           <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Julayo's second annual fundraising gala is November 9th at 430pm at the Pleasant Hill Senior Center 233 Gregory Lane, Pleasant Hill, CA 94523. 
           </p>
       </div>            
@@ -99,12 +99,13 @@
 <section class="bg-green-100 dark:bg-gray-900">
   <div class="grid max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16 lg:grid-cols-12">
     <div class="lg:col-span-5">
-      <div class="relative" style="padding-top: 150%;">
-        <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe>
+      <div class="relative aspect-w-9 aspect-h-16">
+        <!-- <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com/embed/jvVE6Fs6YLY" frameborder="0" allowfullscreen></iframe> -->
+        <iframe width="315" height="560" src="https://www.youtube.com/embed/jvVE6Fs6YLY?si=k16eo8ncKt7tdFIG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
     <div class="mr-auto place-self-center lg:col-span-7">
-        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-700 dark:text-white">Check out this video from our 2023 fundraising Gala!</h1>
+        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl text-gray-700 dark:text-white">Check out this video from our 2023 fundraising Gala!</h1>
         <ul class="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
             <li>
               Our November Gala was successful in raising over $25,000 towards our cause. Go to our Events page for a recap!
